@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+
+/* 引用的样式 */
+
+#todos li {
+    position: relative;
+}
+#todos li div {
+    display: block;
+    margin-left: 50px;
+}
+#todos li em, #todos li cite {
+    display: block;
+    line-height : 1.2em;
+    height: 1.2em;
+    overflow: hidden;
+}
+#todos li em {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.5em;
+    height: 1.5em;
+}
+#todos li cite {
+    font-size: 18px;
+    color: gray;
+    font-style: normal;
+    font-weight: normal;
+}
+#todos li.priority1 {
+    background-color : yellow;
+}
+#todos li.completed.priority1 {
+    background-color: transparent;
+}
+#todos li.completed * {
+    color: #aaa;
+}
+#todos li button {
+    display: block;
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    left: 0;
+    border: none;
+    background: transparent url(images/unchecked.png) center center no-repeat;
+}
+#todos li.completed button {
+    background-image: url(images/checked.png);
+}
+
+#jqt ul li .due_date {
+    float: right;
+}
+#jqt ul li .due_date select {
+    background: none;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    padding: 0 15px;
+}
+#jqt ul li .due_date option {
+    text-align: center;
+}
+#jqt ul li input[type=text] {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    height: 70px;
+}

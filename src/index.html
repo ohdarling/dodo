@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>dodo</title>
+	<link type='text/css' rel='stylesheet' href='res/jqtouch.css' />
+	<link type='text/css' rel='stylesheet' href='res/apple.css' />
+	<link type='text/css' rel='stylesheet' href='res/dodo.css' />
+</head>
+<body>
+
+<div id="home">
+    <div id="jqt">
+        <div id="todos" selected="true" class="edgetoedge form">
+            <div class="toolbar">
+                <h1>dodo</h1>
+                <a href="#" class="addtodo button leftButton slideup">添加</a>
+                <a href="#settings" class="button slideup">设置</a>
+            </div>
+            <div id="list_wrapper" class="scrollview" style="height: 637px; position:relative">
+                <div id="list_wrapper_scroller" class="scroller">
+                    <ul class="edgetoedge todos">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="edit">
+            <form>
+                <div class="toolbar">
+                    <h1>添加待办事项</h1>
+                    <a href="#" class="cancel">返回</a>
+                </div>
+                <ul class="rounded">
+                    <li><input type="text" name="todo" placeholder="待办事项名称" /></li>
+                    <li><textarea name="notes" placeholder="描述"></textarea></li>
+                    <li>完成时间 <span class="due_date"></span></li>
+                    <li>高优先级 <span class="toggle"><input name='priority' type="checkbox" value='1' /></span></li>
+                </ul>
+                <a href="#" class="whiteButton" style="margin: 10px">保存</a>
+                <a href="#" class="redButton" style="margin: 10px">删除</a>
+                <input type='hidden' name='guid' value='' />
+            </form>
+        </div>
+        <div id="settings">
+            <div class="toolbar">
+                <h1>设置</h1>
+                <a href="#" class="button goback">完成</a>
+            </div>
+            <ul class="rounded">
+                <li><a id="cleanup-todos" href="#">清除已经完成的事项</a></li>
+                <li>默认完成时间 <span class="due_date">
+                    <select id="default_due_days">
+                        <option value="0">今天</option>
+                        <option value="1">明天</option>
+                        <option value="6">一周内</option>
+                        <option value="29">一月内</option>
+                    </select>
+                </span></li>
+            </ul>
+            <h2></h2>
+            <ul class="rounded">
+                <li>开发者<small>chonghou</small></li>
+                <li>版本<small>dodo 1.0.1</small></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='lib/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='lib/jqtouch.js'></script>
+<script type='text/javascript' src='lib/dodomanager.js'></script>
+<script type='text/javascript' src='lib/datepicker.js'></script>
+<script type='text/javascript' src='lib/app.js'></script>
+
+</body>
+</html>
