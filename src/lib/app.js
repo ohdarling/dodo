@@ -157,6 +157,7 @@ $(function(){
         });
     }
 
+    DoDoManager.init();
 
     initListPage();
     initEditPage();

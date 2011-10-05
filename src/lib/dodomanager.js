@@ -18,11 +18,13 @@
         var todoLiFormat = '<li class="{completed} {priority}" data-tid="{tid}"><button></button><div><em>{todo}</em><cite>{notes}</cite></div></li>';
         
         function storeGet(name, default_val) {
-            var str = window.localStorage[name] || '';
+            var str = win.localStorage[name] || '';
             return str.length > 0 ? JSON.parse(str) : (typeof default_val == 'undefined' ? null : default_val);
         }
         
-        function storeSet(name, val) { window.localStorage[name] = JSON.stringify(val); }
+        function storeSet(name, val) {
+            win.localStorage[name] = JSON.stringify(val);
+        }
         
         function guid() {
             var guid = storeGet('guid', 0) + 1;
@@ -191,4 +193,5 @@
         
         return manager;
     })());
+    
 })(window, window.document);

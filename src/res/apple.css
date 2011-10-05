@@ -324,7 +324,7 @@ body {
 }
 
 #jqt ul li textarea {
-    height: 120px;
+    height: 80px;
     padding: 0;
     text-indent: -2px;
 }
@@ -438,7 +438,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     display: block;
-    width: 23%;
+    width: 50%;
     float: right;
     padding: 3px 0px;
 }

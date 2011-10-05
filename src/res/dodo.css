@@ -17,14 +17,14 @@
     overflow: hidden;
 }
 #todos li em {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     color: #333;
     line-height: 1.5em;
     height: 1.5em;
 }
 #todos li cite {
-    font-size: 18px;
+    font-size: 12px;
     color: gray;
     font-style: normal;
     font-weight: normal;
@@ -42,8 +42,9 @@
     display: block;
     position: absolute;
     width: 56px;
-    height: 56px;
+    height: 54px;
     left: 0;
+    top: 0;
     border: none;
     background: transparent url(images/unchecked.png) center center no-repeat;
 }
@@ -55,17 +56,18 @@
     float: right;
 }
 #jqt ul li .due_date select {
-    background: none;
+    background: transparent;
     text-align: center;
     margin: 0;
     width: auto;
-    padding: 0 15px;
+    padding: 0 8px;
+    border: none;
 }
 #jqt ul li .due_date option {
     text-align: center;
 }
 #jqt ul li input[type=text] {
-    margin-top: -10px;
-    margin-bottom: -10px;
-    height: 70px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    height: 40px;
 }
