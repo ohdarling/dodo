@@ -1,6 +1,17 @@
 .DS_Store
 
-*.mode1v3
-*.pbxuser
 iOS/build/
+
+WebOS/*.7z
+WebOS/*.ipk
+WebOS/lib/phonegap.js
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
 
