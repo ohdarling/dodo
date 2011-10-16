@@ -1,6 +1,8 @@
 $(function(){
 
-    var jQT = $.jQTouch({
+    window.dodo = {};
+
+    window.jQT = $.jQTouch({
         icon: 'icon.png',
         startupScreen: 'startup.png',
         preloadImages: [
@@ -30,17 +32,12 @@ $(function(){
     
     var editFormDatePicker = DatePicker($('#edit .due_date'));
     
-    function ScrollView() {
-        this.bind = function() {};
-        this.addListener = function() {};
-    }
-    
-    var scrollView = new ScrollView();
-    scrollView.bind($('#list_wrapper'), { parent : this, id : 'listscroll' });
-    scrollView.addListener(scrollView, "scrollEnd", scrollView, "onDefaultScrollEnd"); 
+    var myScroll = new iScroll('list_wrapper', { checkDOMChanges: true });
         
     function refreshList(todoid) {
         var ret = DoDoManager.todoListHtml();
+        $('#todos ul').html(ret.html);
+        /*
         $('#todos ul').html(ret.html).parent().css({ 'min-height' : Math.max(637, ret.height) + 'px' });
         if (todoid) {
             var top = $('#todos li[data-tid=' + todoid + ']').offset().top - $('#todos ul').offset().top;
@@ -48,6 +45,7 @@ $(function(){
                 scrollView.scrollTo(-top, 0);
             }
         }
+        */
     }
     
     function showEdit(todo) {
@@ -71,6 +69,7 @@ $(function(){
         
         jQT.goTo('#edit', 'slideup')
     }
+    dodo.showEdit = showEdit;
     
     function initListPage() {
         refreshList();
@@ -141,7 +140,7 @@ $(function(){
                 
                 
             } else {
-                alert('待办事项名称必须多于一个字符');
+                MessageBox.show('待办事项名称必须多于一个字符');
             }
             
             return false;

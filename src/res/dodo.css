@@ -1,8 +1,68 @@
 @charset 'utf-8';
 
+.hidden {
+    display: none;
+}
 
-/* 引用的样式 */
+.palm div.toolbar,
+.webOS div.toolbar {
+    display: none;
+}
 
+input, textarea {
+    background: white;
+}
+
+#messagebox {
+    margin-top: 50%;
+    position: absolute;
+    z-index: 999;
+    height: auto;
+    width: auto;
+    color: white;
+    text-align: center;
+    left: 50%;
+    display: none;
+}
+
+#messagebox .content {
+    color: white;
+    margin-left: -50%;
+    margin-top: -50%;
+    margin-right: 50%;
+    background-color: black;
+    opacity: 0.7;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+#messagebox .content p {
+    padding: 20px 30px;
+    font-family: sans-serif;
+}
+
+#messageboxMask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    display: none;
+}
+
+#todos {
+    position: relative;
+    top: 0;
+    bottom: 0;
+}
+#todos #list_wrapper {
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    width: 100%;
+}
 #todos li {
     position: relative;
 }

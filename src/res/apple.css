@@ -1,5 +1,5 @@
 body {
-    background: rgb(0,0,0);
+    background: rgb(255,255,255);
 }
 
 #jqt > * {
@@ -121,7 +121,7 @@ body {
 
 #jqt .whiteButton.active, #jqt .grayButton.active, #jqt .redButton.active, #jqt .blueButton.active, #jqt .greenButton.active,
 #jqt .whiteButton:active, #jqt .grayButton:active, #jqt .redButton:active, #jqt .blueButton:active, #jqt .greenButton:active {
-    -webkit-border-image: url(images/activeButton.png) 0 12 0 12;
+    /*-webkit-border-image: url(images/activeButton.png) 0 12 0 12;*/
 }
 
 #jqt .whiteButton {

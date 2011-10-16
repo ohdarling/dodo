@@ -1,0 +1,9 @@
+{
+	"id": "com.xujiwei.dodo",
+	"version": "0.0.1",
+	"vendor": "TickPlant",
+	"type": "web",
+	"main": "index.html",
+	"title": "dodo",
+	"uiRevision": 2
+}

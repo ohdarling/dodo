@@ -2,13 +2,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 	<title>dodo</title>
 	<link type='text/css' rel='stylesheet' href='res/jqtouch.css' />
 	<link type='text/css' rel='stylesheet' href='res/apple.css' />
 	<link type='text/css' rel='stylesheet' href='res/dodo.css' />
+	<link type='text/css' rel='stylesheet' href='res/menu.css' />
+	<script type="text/javascript" src="phonegap-1.0.0.js"></script>
 </head>
 <body>
+
+<div id="menu" class="hidden">
+	<a onclick="dodo.showEdit();">New Todo</a>
+	<a onclick="jQT.goTo('#settings', 'slideup')">Settings</a>
+	<a onclick="">Done</a>
+</div>
+
+
+<div id="messageboxMask">
+    <div id="messagebox">
+        <div class='content'>
+            <p>MessageBox</p>
+        </div>
+    </div>
+</div>
+
 
 <div id="home">
     <div id="jqt">
@@ -18,8 +36,8 @@
                 <a href="#" class="addtodo button leftButton slideup">添加</a>
                 <a href="#settings" class="button slideup">设置</a>
             </div>
-            <div id="list_wrapper" class="scrollview" style="height: 637px; position:relative">
-                <div id="list_wrapper_scroller" class="scroller">
+            <div id="list_wrapper">
+                <div id="list_scroller">
                     <ul class="edgetoedge todos">
                     </ul>
                 </div>
@@ -68,10 +86,31 @@
 </div>
 
 <script type='text/javascript' src='lib/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="lib/iscroll.js"></script>
 <script type='text/javascript' src='lib/jqtouch.js'></script>
 <script type='text/javascript' src='lib/dodomanager.js'></script>
+<script type='text/javascript' src='lib/messagebox.js'></script>
 <script type='text/javascript' src='lib/datepicker.js'></script>
 <script type='text/javascript' src='lib/app.js'></script>
+
+
+
+<script>
+
+$(function() {
+    //$('body').addClass(device.platform);
+});
+
+$('#menu a').live('click', function() {
+    $('#menu').addClass('hidden');
+});
+
+window.addEventListener("appmenuopen", function() {
+    $('#menu').toggleClass('hidden');
+});
+
+</script>
+
 
 </body>
 </html>

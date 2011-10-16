@@ -243,18 +243,22 @@ body {
 
 @-webkit-keyframes slideUpIn {
     0% {
+        top: 100%;
         -webkit-transform: translateY(100%);
     } 
     100% {
+        top: 0;
         -webkit-transform: translateY(0);
     }
 }
 
 @-webkit-keyframes slideUpOut {
     0% {
+        top: 0;
         -webkit-transform: translateY(0);
     } 
     100% {
+        top: 0;
         -webkit-transform: translateY(0);
     }
 }
@@ -274,18 +278,22 @@ body {
 
 @-webkit-keyframes slideDownIn {
     0% {
+        top: 0;
         -webkit-transform: translateY(0);
     } 
     100% {
+        top: 0;
         -webkit-transform: translateY(0);
     }
 }
 
 @-webkit-keyframes slideDownOut {
     0% {
+        top: 0;
         -webkit-transform: translateY(0);
     } 
     100% {
+        top: 100%;
         -webkit-transform: translateY(100%);
     }
 }
