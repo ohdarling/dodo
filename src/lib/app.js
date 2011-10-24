@@ -32,7 +32,9 @@ $(function(){
     
     var editFormDatePicker = DatePicker($('#edit .due_date'));
     
-    var myScroll = new iScroll('list_wrapper', { checkDOMChanges: true });
+    $('#jqt div.content').each(function(idx, el) {
+        new iScroll(el, { checkDOMChanges: true });
+    });
         
     function refreshList(todoid) {
         var ret = DoDoManager.todoListHtml();
@@ -103,7 +105,7 @@ $(function(){
     
     function initSettingsPage() {
         $('#cleanup-todos').click(function() {
-            if (window.confirm && window.confirm('确定清除已完成的事项？')) {
+            if ((window.confirm && window.confirm('确定清除已完成的事项？')) || true) {
                 DoDoManager.removeCompleted();
                 refreshList();
             }

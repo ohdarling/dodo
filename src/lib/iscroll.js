@@ -14,6 +14,7 @@ var m = Math,
     isIDevice = (/iphone|ipad/gi).test(navigator.appVersion),
     isPlaybook = (/playbook/gi).test(navigator.appVersion),
     isTouchPad = (/hp-tablet/gi).test(navigator.appVersion),
+    isWebOS = (/webOS/gi).test(navigator.appVersion),
 
     has3d = 'WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix(),
     hasTouch = 'ontouchstart' in window && !isTouchPad,
@@ -95,7 +96,7 @@ var m = Math,
 
 			// Events
 			onRefresh: null,
-			onBeforeScrollStart: function (e) { e.preventDefault(); },
+			onBeforeScrollStart: function (e) { !isWebOS && e.preventDefault(); },
 			onScrollStart: null,
 			onBeforeScrollMove: null,
 			onScrollMove: null,

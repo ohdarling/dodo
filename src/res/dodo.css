@@ -4,6 +4,27 @@
     display: none;
 }
 
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
 .palm div.toolbar,
 .webOS div.toolbar {
     display: none;
@@ -11,6 +32,13 @@
 
 input, textarea {
     background: white;
+}
+
+#jqt .content {
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    width: 100%;
 }
 
 #messagebox {
@@ -56,12 +84,6 @@ input, textarea {
     position: relative;
     top: 0;
     bottom: 0;
-}
-#todos #list_wrapper {
-    position: absolute;
-    top: 44px;
-    bottom: 0;
-    width: 100%;
 }
 #todos li {
     position: relative;

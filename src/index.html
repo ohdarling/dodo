@@ -8,15 +8,9 @@
 	<link type='text/css' rel='stylesheet' href='res/apple.css' />
 	<link type='text/css' rel='stylesheet' href='res/dodo.css' />
 	<link type='text/css' rel='stylesheet' href='res/menu.css' />
-	<script type="text/javascript" src="phonegap-1.0.0.js"></script>
+	<script type="text/javascript" src="phonegap.js"></script>
 </head>
 <body>
-
-<div id="menu" class="hidden">
-	<a onclick="dodo.showEdit();">New Todo</a>
-	<a onclick="jQT.goTo('#settings', 'slideup')">Settings</a>
-	<a onclick="">Done</a>
-</div>
 
 
 <div id="messageboxMask">
@@ -36,8 +30,8 @@
                 <a href="#" class="addtodo button leftButton slideup">添加</a>
                 <a href="#settings" class="button slideup">设置</a>
             </div>
-            <div id="list_wrapper">
-                <div id="list_scroller">
+            <div class="content">
+                <div>
                     <ul class="edgetoedge todos">
                     </ul>
                 </div>
@@ -49,15 +43,21 @@
                     <h1>添加待办事项</h1>
                     <a href="#" class="cancel">返回</a>
                 </div>
-                <ul class="rounded">
-                    <li><input type="text" name="todo" placeholder="待办事项名称" /></li>
-                    <li><textarea name="notes" placeholder="描述"></textarea></li>
-                    <li>完成时间 <span class="due_date"></span></li>
-                    <li>高优先级 <span class="toggle"><input name='priority' type="checkbox" value='1' /></span></li>
-                </ul>
-                <a href="#" class="whiteButton" style="margin: 10px">保存</a>
-                <a href="#" class="redButton" style="margin: 10px">删除</a>
-                <input type='hidden' name='guid' value='' />
+                <div class="content">
+                    <div class="clearfix">
+                        <ul class="rounded">
+                            <li><input type="text" name="todo" placeholder="待办事项名称" /></li>
+                            <li><textarea name="notes" placeholder="描述"></textarea></li>
+                            <li>完成时间 <span class="due_date"></span></li>
+                            <li>高优先级 <span class="toggle"><input name='priority' type="checkbox" value='1' /></span></li>
+                        </ul>
+                        <div style="height:130px">
+                            <a href="#" class="whiteButton" style="margin: 10px">保存</a>
+                            <a href="#" class="redButton" style="margin: 10px">删除</a>
+                            <input type='hidden' name='guid' value='' />
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
         <div id="settings">
@@ -65,22 +65,26 @@
                 <h1>设置</h1>
                 <a href="#" class="button goback">完成</a>
             </div>
-            <ul class="rounded">
-                <li><a id="cleanup-todos" href="#">清除已经完成的事项</a></li>
-                <li>默认完成时间 <span class="due_date">
-                    <select id="default_due_days">
-                        <option value="0">今天</option>
-                        <option value="1">明天</option>
-                        <option value="6">一周内</option>
-                        <option value="29">一月内</option>
-                    </select>
-                </span></li>
-            </ul>
-            <h2></h2>
-            <ul class="rounded">
-                <li>开发者<small>chonghou</small></li>
-                <li>版本<small>dodo 1.0.1</small></li>
-            </ul>
+            <div class="content">
+                <div>
+                    <ul class="rounded">
+                        <li><a id="cleanup-todos" href="#">清除已经完成的事项</a></li>
+                        <li>默认完成时间 <span class="due_date">
+                            <select id="default_due_days">
+                                <option value="0">今天</option>
+                                <option value="1">明天</option>
+                                <option value="6">一周内</option>
+                                <option value="29">一月内</option>
+                            </select>
+                        </span></li>
+                    </ul>
+                    <h2></h2>
+                    <ul class="rounded">
+                        <li>版本<small>dodo 1.0.1</small></li>
+                        <li>网站<small>TickPlant.com/dodo</small></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -93,24 +97,14 @@
 <script type='text/javascript' src='lib/datepicker.js'></script>
 <script type='text/javascript' src='lib/app.js'></script>
 
-
-
 <script>
-
-$(function() {
-    //$('body').addClass(device.platform);
+document.body.addEventListener('touchstart', function(e) {
+    var el = $(e.target);
+    if (el.hasClass('content') || el.hasClass('toolbar')) {
+        e.preventDefault();
+    }
 });
-
-$('#menu a').live('click', function() {
-    $('#menu').addClass('hidden');
-});
-
-window.addEventListener("appmenuopen", function() {
-    $('#menu').toggleClass('hidden');
-});
-
 </script>
-
 
 </body>
 </html>
