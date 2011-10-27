@@ -1,4 +1,8 @@
 @charset 'utf-8';
+@import 'jqtouch.css';
+@import 'apple.css';
+@import 'spinningwheel/spinningwheel.css';
+
 
 .hidden {
     display: none;
