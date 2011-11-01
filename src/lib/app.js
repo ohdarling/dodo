@@ -30,6 +30,15 @@ $(function(){
         ]
     });
     
+    
+    var hasTouch = 'ontouchstart' in window,
+        // Events
+        START_EV = hasTouch ? 'touchstart' : 'mousedown',
+        MOVE_EV = hasTouch ? 'touchmove' : 'mousemove',
+        END_EV = hasTouch ? 'touchend' : 'mouseup',
+        CANCEL_EV = hasTouch ? 'touchcancel' : 'mouseup';
+        
+    
     var editFormDatePicker = DatePicker($('#edit .due_date'));
     $('#edit .due_date select').decorateSelects();
     
@@ -77,8 +86,8 @@ $(function(){
     function initListPage() {
         refreshList();
         
-        $('#todos .addtodo').click(function() { showEdit(); return false; });
-        $('#todos ul li').live('click', function(e) {
+        $('#todos .addtodo').bind(END_EV, function() { showEdit(); return false; });
+        $('#todos ul li').live(END_EV, function(e) {
             if (e && e.target && (e.target.tagName == 'INPUT' || e.target.tagName == 'LABEL')) {
                 return;
             }
@@ -92,7 +101,7 @@ $(function(){
             return false;
         });
         
-        $('#todos li button').live('click', function(){
+        $('#todos li button').live(END_EV, function(){
             var $el = $(this);
             var todo = DoDoManager.getById($el.closest('li').attr('data-tid'));
             if (todo) {
@@ -105,7 +114,7 @@ $(function(){
     }
     
     function initSettingsPage() {
-        $('#cleanup-todos').click(function() {
+        $('#cleanup-todos').bind(END_EV, function() {
             if ((window.confirm && window.confirm('确定清除已完成的事项？')) || true) {
                 DoDoManager.removeCompleted();
                 refreshList();
@@ -150,8 +159,8 @@ $(function(){
         }
         
         $('#edit form').submit(submitForm);
-        $('#edit .whiteButton').click(submitForm);
-        $('#edit .redButton').click(function() {
+        $('#edit .whiteButton').bind(END_EV, submitForm);
+        $('#edit .redButton').bind(END_EV, function() {
             var form = $('#edit form').get(0);
             DoDoManager.remove({ guid : form.guid.value });
             refreshList();

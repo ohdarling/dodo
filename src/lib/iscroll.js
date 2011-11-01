@@ -96,11 +96,11 @@ var m = Math,
 
 			// Events
 			onRefresh: null,
-			onBeforeScrollStart: function (e) { !isWebOS && e.preventDefault(); },
+			onBeforeScrollStart: function (e) { /*!isWebOS && e.preventDefault();*/ },
 			onScrollStart: null,
 			onBeforeScrollMove: null,
 			onScrollMove: null,
-			onBeforeScrollEnd: null,
+			onBeforeScrollEnd: function(e) { if (this.moved) { e.preventDefault(); e.stopPropagation(); } },
 			onScrollEnd: null,
 			onTouchEnd: null,
 			onDestroy: null,

@@ -97,11 +97,8 @@
 <script type='text/javascript' src='lib/app.js'></script>
 
 <script>
-document.body.addEventListener('touchstart', function(e) {
-    var el = $(e.target);
-    if (el.hasClass('content') || el.hasClass('toolbar')) {
-        e.preventDefault();
-    }
+document.body.addEventListener('touchmove', function(e) {
+    e.preventDefault();
 });
 </script>
 
