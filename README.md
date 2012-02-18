@@ -21,7 +21,10 @@ dodo 是一个使用 HTML+JS+CSS 编写的待办事项软件，基于 jQuery+jQT
 * [PhoneGap](http://phonegap.com/)
 * [jQuery](http://jquery.com/)
 * [jQTouch](http://jqtouch.com/)
-* [jquery-decorateselects)(https://github.com/ohdarling/jquery-decorateselects])
+* [jquery-decorateselects](https://github.com/ohdarling/jquery-decorateselects])
+* [iScroll 4](http://cubiq.org/iscroll-4)
+* [Spinning Wheel](http://cubiq.org/spinning-wheel-on-webkit-for-iphone-ipod-touch/11)
+
 
 ## 关于
 
