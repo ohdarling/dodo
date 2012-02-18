@@ -70,6 +70,4 @@ $(function() {
             }
         }
     });
-    
-    $('select').decorateSelects();
 });

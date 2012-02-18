@@ -40,7 +40,7 @@ $(function(){
         
     
     var editFormDatePicker = DatePicker($('#edit .due_date'));
-    $('#edit .due_date select').decorateSelects();
+    $('#edit .due_date select').decorateSelects(true);
     
     $('#jqt div.content').each(function(idx, el) {
         new iScroll(el, { checkDOMChanges: true });
@@ -174,5 +174,6 @@ $(function(){
     initEditPage();
     initSettingsPage();
     
-    
+    // Decorate all select elements
+    $('select').decorateSelects(true);
 });
