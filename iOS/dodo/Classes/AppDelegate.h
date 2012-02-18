@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  dodo
 //
-//  Created by Xu Jiwei on 11-10-5.
-//  Copyright Taobao.com 2011. All rights reserved.
+//  Created by Xu Jiwei on 12-2-18.
+//  Copyright xujiwei.com 2012年. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
