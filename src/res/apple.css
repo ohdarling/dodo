@@ -312,8 +312,7 @@ body {
 #jqt ul li input[type="url"],
 #jqt ul li textarea,
 #jqt ul li select {
-    color: #777;
-    background: #fff url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+    color: #555;
     border: 0;
     font: normal 17px "Helvetica Neue", Helvetica;
     padding: 0;
@@ -324,9 +323,8 @@ body {
 }
 
 #jqt ul li textarea {
-    height: 80px;
+    height: 4em;
     padding: 0;
-    text-indent: -2px;
 }
 
 #jqt ul li select {
@@ -438,7 +436,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     display: block;
-    width: 50%;
+    width: 70%;
     float: right;
     padding: 3px 0px;
 }

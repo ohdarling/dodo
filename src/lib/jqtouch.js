@@ -426,7 +426,7 @@
         }
         function setHash(hash) {
             _debug();
-console.log('hash ' + hash);
+            //console.log('hash ' + hash);
             // Trim leading # if need be
             hash = (hash || '').replace(/^#/, ''),
 
@@ -752,10 +752,12 @@ console.log('hash ' + hash);
 
             function updateChanges() {
                 // _debug();
-                var firstFinger = event.changedTouches[0] || null;
-                deltaX = firstFinger.pageX - startX;
-                deltaY = firstFinger.pageY - startY;
-                deltaT = (new Date).getTime() - startTime;
+                var firstFinger = (event.changedTouches || [])[0] || null;
+                if (firstFinger) {
+                    deltaX = firstFinger.pageX - startX;
+                    deltaY = firstFinger.pageY - startY;
+                    deltaT = (new Date).getTime() - startTime;
+                }
                 // _debug('deltaX:'+deltaX+';deltaY:'+deltaY+';');
             }
 
